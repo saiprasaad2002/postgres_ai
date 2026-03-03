@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
+from typing import Optional
 
 class MCPSettings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -17,6 +18,7 @@ class MCPSettings(BaseSettings):
     mcp_server_transport: str
 
 @lru_cache
-def get_mcp_settings():
-    settings = MCPSettings()
-    return settings
+def get_mcp_settings(env_file: Optional[str] = None):
+    if env_file and env_file != ".env":
+        return MCPSettings(_env_file=env_file)
+    return MCPSettings()

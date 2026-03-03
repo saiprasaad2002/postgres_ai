@@ -1,5 +1,5 @@
 [project]
-name = "pg-ai"
+name = "postgres_ai"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -11,5 +11,11 @@ dependencies = [
     "fastmcp>=3.0.2",
     "pandas>=3.0.1",
     "polars>=1.38.1",
+    "typer>=0.24.1",
     "uvicorn>=0.41.0",
 ]
+[project.scripts]
+postgres_ai = "postgres_ai.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/postgres_ai"]

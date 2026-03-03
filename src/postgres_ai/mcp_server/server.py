@@ -1,5 +1,5 @@
 from fastmcp import FastMCP
-from src.mcp_tools.tools import get_mcp_tools
+from postgres_ai.mcp_tools.tools import get_mcp_tools
 from fastmcp.server.lifespan import Lifespan
 
 class PgMCP:

@@ -1,5 +1,5 @@
 from pathlib import Path
-from src.types.pg_ai_types import Content, DatabaseResult, MCPTools
+from postgres_ai.types.pg_ai_types import Content, DatabaseResult, MCPTools
 from fastmcp import Context
 from sqlalchemy import text
 import polars as pl
